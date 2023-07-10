@@ -44,8 +44,7 @@ $(function () {
       projectEl.html(`
         
           <img src="assets/img/projectsImg/${images}" alt="project login/signup"  class="project-bg">
-          <span class="project-bg-name">${projectName}</span>
-       
+          <span class="project-bg-name">${projectName}</span>       
 
           <img src="assets/img/projectsImg/${images}" alt="project login/signup"  class="project-ss">
         
@@ -116,6 +115,19 @@ $(function () {
     classSelector: '.main',
     speed: 200,
     pager: true,
+    afterChange: function (page) {
+      let n = $(".project-ss").length;
+      if (0 >= page || page > n)
+        return;
+
+      let a = $(".project-ss")[3 - page];
+      console.log(page + " " + a);
+      console.log(a);
+
+      $(".project-ss").removeClass("animate__animated animate__lightSpeedInRight animate__faster");
+      a.classList.add("animate__animated", "animate__lightSpeedInRight", "animate__faster");
+
+    }
   });
 
 
