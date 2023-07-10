@@ -116,17 +116,24 @@ $(function () {
     speed: 200,
     pager: true,
     afterChange: function (page) {
+      $(".project-ss").removeClass("animate__animated animate__lightSpeedInLeft animate__faster");
+      $(".description ").removeClass("animate__animated animate__lightSpeedInRight animate__faster");
+      $(".project-bg-name ").removeClass("animate__animated animate__slideInUp");
       let n = $(".project-ss").length;
       if (0 >= page || page > n)
         return;
 
-      let a = $(".project-ss")[3 - page];
-      console.log(page + " " + a);
-      console.log(a);
+      let a = $(".project-ss")[page - 1]; // 3 - 1 = 2 
+      let b = $(".description")[page - 1]; // 3 - 1 = 2 
+      let c = $(".project-bg-name")[page - 1]; // 3 - 1 = 2 
 
-      $(".project-ss").removeClass("animate__animated animate__lightSpeedInRight animate__faster");
-      a.classList.add("animate__animated", "animate__lightSpeedInRight", "animate__faster");
+      // console.log(page + " " + a); 
 
+      a.classList.add("animate__animated", "animate__lightSpeedInLeft", "animate__faster");
+      b.classList.add("animate__animated", "animate__lightSpeedInRight", "animate__faster");
+      c.classList.add("animate__animated", "animate__slideInUp");
+
+      // b.style.transform = "translate(-80px, 50px)";
     }
   });
 
