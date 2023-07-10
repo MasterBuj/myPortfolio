@@ -93,7 +93,17 @@
    pointer-events: none;
  }
 
-
+ .notif-toast {
+   display: none;
+   z-index: 9999;
+   background: #16203291;
+   position: fixed;
+   right: 30px;
+   top: 10px;
+   padding: 15px;
+   border-radius: 15px;
+   border: 1px #ffffff30 solid
+ }
 
  #main {
    display: block;
@@ -605,4 +615,20 @@ MARK Pre-loader Style
 
  .mouse.cirle {
    display: none !important;
+ }
+
+
+
+ .box.show {
+   transform: translateX(0);
+ }
+
+ .project-bg-name {
+   color: transparent;
+   font-size: 10em;
+   position: absolute;
+   top: -45px;
+   left: -60px;
+   -webkit-text-stroke: 1px #18d26e2e;
+   text-wrap: nowrap;
  }

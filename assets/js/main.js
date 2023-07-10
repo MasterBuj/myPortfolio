@@ -4,6 +4,7 @@ $(function () {
 
   "use strict";
 
+  // technologies used
   function technolgiesF(tech) {
     var techEl = "";
     tech.forEach(function (tech) {
@@ -34,8 +35,7 @@ $(function () {
     return techEl;
   };
 
-
-
+  //laod all projects
   function loadProjects(projects) {
     projects.forEach(function (project) {
       const { projectName, technolgies, projectUrl, status, category, responsive, images, description, tag, className } = project;
@@ -44,9 +44,10 @@ $(function () {
       projectEl.html(`
         
           <img src="assets/img/projectsImg/${images}" alt="project login/signup"  class="project-bg">
+          <span class="project-bg-name">${projectName}</span>
        
 
-          <img src="assets/img/projectsImg/${images}" alt="project login/signup" class="project-ss">
+          <img src="assets/img/projectsImg/${images}" alt="project login/signup"  class="project-ss">
         
         <div class="description ${className}">
           <h4>${projectName}</h4>
@@ -108,22 +109,21 @@ $(function () {
   loadProjects(projectJson);
 
 
+  // set all img to none draggable image
   const img = document.querySelector("img");
   img.setAttribute("draggable", false);
 
+
+
+  // docs slider
   docSlider.init({
     classSelector: '.main',
     speed: 200,
-    beforeChange: function (page) {
-      console.log("before " + page)
-    },
-    afterChange: function (page) {
-      console.log("after " + page)
-    },
     pager: true,
   });
 
 
+  // mouse effect
   let mouse = new Mouse({
     mouse: 'cirle',
     color: '#ffffff',
@@ -134,7 +134,47 @@ $(function () {
     mouse_clicked: true,
     clrChanged: false
   })
-  mouse.mouse()
+  mouse.mouse();
 
 
+  // clipboard copy
+  document.getElementsByClassName("copyText").onclick = function () {
+
+    console.log(this)
+    // copyTextToClipboard(text);
+  }
+  // async function copyTextToClipboard(text) {
+  //   try {
+  //     await navigator.clipboard.writeText(text);
+  //     alert('Text copied to clipboard');
+  //   } catch (err) {
+  //     alert('Error in copying text: ', err);
+  //   }
+  // }
+
+
+  // clipboard copy
+  $(document).ready(function () {
+    $(".copyText").click(function (event) {
+      event.preventDefault();
+      let text = $(this).attr("to-copy");
+
+      $(".notif-toast").css("display", "block");
+
+      copyTextToClipboard(text);
+
+      setTimeout(function () {
+        $(".notif-toast").css("display", "none");
+      }, 5000);
+
+      async function copyTextToClipboard(text) {
+        try {
+          await navigator.clipboard.writeText(text);
+          $(".notif-toast").text(text + " copied to clipboard")
+        } catch (err) {
+          $(".notif-toast").text('Error in copying text: ', err)
+        }
+      }
+    });
+  });
 })
