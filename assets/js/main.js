@@ -109,10 +109,6 @@ $(function () {
   loadProjects(projectJson);
 
 
-  // set all img to none draggable image
-  const img = document.querySelector("img");
-  img.setAttribute("draggable", false);
-
 
 
   // docs slider
@@ -137,20 +133,6 @@ $(function () {
   mouse.mouse();
 
 
-  // clipboard copy
-  document.getElementsByClassName("copyText").onclick = function () {
-
-    console.log(this)
-    // copyTextToClipboard(text);
-  }
-  // async function copyTextToClipboard(text) {
-  //   try {
-  //     await navigator.clipboard.writeText(text);
-  //     alert('Text copied to clipboard');
-  //   } catch (err) {
-  //     alert('Error in copying text: ', err);
-  //   }
-  // }
 
 
   // clipboard copy
