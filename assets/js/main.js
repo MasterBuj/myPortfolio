@@ -123,17 +123,13 @@ $(function () {
       if (0 >= page || page > n)
         return;
 
-      let a = $(".project-ss")[page - 1]; // 3 - 1 = 2 
-      let b = $(".description")[page - 1]; // 3 - 1 = 2 
-      let c = $(".project-bg-name")[page - 1]; // 3 - 1 = 2 
-
-      // console.log(page + " " + a); 
+      let a = $(".project-ss")[page - 1];
+      let b = $(".description")[page - 1];
+      let c = $(".project-bg-name")[page - 1];
 
       a.classList.add("animate__animated", "animate__lightSpeedInLeft", "animate__faster");
       b.classList.add("animate__animated", "animate__lightSpeedInRight", "animate__faster");
       c.classList.add("animate__animated", "animate__slideInUp");
-
-      // b.style.transform = "translate(-80px, 50px)";
     }
   });
 
@@ -155,27 +151,27 @@ $(function () {
 
 
   // clipboard copy
-  $(document).ready(function () {
-    $(".copyText").click(function (event) {
-      event.preventDefault();
-      let text = $(this).attr("to-copy");
+  $(".copyText").click(function (event) {
+    event.preventDefault();
+    var hiddenClipboard = $('#_hiddenClipboard_');
+    if (!hiddenClipboard.length) {
+      $('body').append('<textarea readonly style="position:absolute;top: -9999px;" id="_hiddenClipboard_">' + this.getAttribute("data-clipboard-text") + '</textarea>');
+      hiddenClipboard = $('#_hiddenClipboard_');
+    }
+    hiddenClipboard.select();
+    document.execCommand('copy');
+    document.getSelection().removeAllRanges();
 
-      $(".notif-toast").css("display", "block");
+    $(".notif-toast").text(this.getAttribute("data-clipboard-text") + " copied to clipboard")
+    $(".notif-toast").css("display", "block");
+    setTimeout(function () {
+      $(".notif-toast").css("display", "none");
+    }, 5000);
 
-      copyTextToClipboard(text);
-
-      setTimeout(function () {
-        $(".notif-toast").css("display", "none");
-      }, 5000);
-
-      async function copyTextToClipboard(text) {
-        try {
-          await navigator.clipboard.writeText(text);
-          $(".notif-toast").text(text + " copied to clipboard")
-        } catch (err) {
-          $(".notif-toast").text('Error in copying text: ', err)
-        }
-      }
-    });
   });
+
+
+
+
+
 })

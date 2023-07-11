@@ -1,10 +1,9 @@
  /* Scrollbar styles */
  ::-webkit-scrollbar {
-   width: 15px;
-   height: 12px;
+   display: none;
  }
 
- ::-webkit-scrollbar-track {
+ /* ::-webkit-scrollbar-track {
    background: #1F2122;
    border-radius: 10px;
  }
@@ -12,7 +11,7 @@
  ::-webkit-scrollbar-thumb {
    border-radius: 10px;
    background: #27292A;
- }
+ } */
 
  p,
  h1,
@@ -177,9 +176,7 @@ MARK Header
 
 
  @media (max-width: 992px) {
-   #header {
-     height: 100vh;
-   }
+
 
    #header h1 {
      font-size: 36px;
@@ -237,17 +234,6 @@ MARK Section
    border-radius: 23px;
    height: auto;
  }
-
- @media (max-width: 768px) {
-
-   /* section .container {
-     width: 90vw;
-   } */
-
-
- }
-
-
 
 
  .section-title h2 {
@@ -409,6 +395,11 @@ MARK Project
 MARK Contact
 --------------------------------------------- 
 */
+
+ .contact {
+   margin: auto;
+ }
+
  .contact .section-title h1 {
    font-weight: 700;
    /* font-size: 26px; */
@@ -472,12 +463,6 @@ MARK Contact
 
    .links {
      margin-top: 15px;
-   }
-
-
-   .contact .content {
-     padding: 10px !important;
-     margin-top: 25px;
    }
 
    .contact img {
@@ -629,7 +614,7 @@ MARK Pre-loader Style
  }
 
 
- @keyframes lightSpeedInRight {
+ @keyframes lightSpeedInRightDesk {
    from {
      transform: translate3d(100%, 0, 0) skewX(-30deg);
      opacity: 0;
@@ -650,6 +635,13 @@ MARK Pre-loader Style
  }
 
  .animate__lightSpeedInRight {
-   animation-name: lightSpeedInRight;
+   animation-name: lightSpeedInRightDesk;
    animation-timing-function: ease-out;
+ }
+
+ @media (max-width: 992px) {
+   .animate__lightSpeedInRight {
+     animation-name: lightSpeedInRight;
+     animation-timing-function: ease-out;
+   }
  }
