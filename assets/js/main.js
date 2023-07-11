@@ -116,9 +116,11 @@ $(function () {
     speed: 200,
     pager: true,
     afterChange: function (page) {
+
       $(".project-ss").removeClass("animate__animated animate__lightSpeedInLeft animate__faster");
       $(".description ").removeClass("animate__animated animate__lightSpeedInRight animate__faster");
       $(".project-bg-name ").removeClass("animate__animated animate__slideInUp");
+
       let n = $(".project-ss").length;
       if (0 >= page || page > n)
         return;
