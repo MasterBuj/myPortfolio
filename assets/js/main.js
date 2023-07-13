@@ -1,9 +1,9 @@
 
 
-$(function () {
+$(window).on('load', function () {
 
   "use strict";
-
+  $('#js-preloader').addClass('loaded');
   // technologies used
   function technolgiesF(tech) {
     var techEl = "";
@@ -46,7 +46,7 @@ $(function () {
           <img src="assets/img/projectsImg/${images}" alt="project login/signup"  class="project-bg">
           <span class="project-bg-name">${projectName}</span>       
 
-          <img src="assets/img/projectsImg/${images}" alt="project login/signup"  class="project-ss">
+          <img src="assets/img/projectsImg/${images}" alt="${projectName}"  class="project-ss">
         
         <div class="description ${className}">
           <h4>${projectName}</h4>
@@ -71,35 +71,51 @@ $(function () {
       projectName: "Secured Signup/Login",
       technolgies: ["HTML", "CSS", "JS", "PHP", "SQL"],
       projectUrl: "https://github.com/MasterBuj/user-registration-oop",
+      demoUrl: "https://github.com/MasterBuj/user-registration-oop",
       status: "Final",
       category: "Web App",
       responsive: false,
-      images: "slide1.jpg",
-      description: "The project \"Secured Signup/Login\" is a web application developed using HTML, CSS, JavaScript, and PHP OOP. It focuses on providing a secure and user-friendly authentication system for users...",
+      images: "Projects-images-0001.jpg",
+      description: "Enhance security with a secured signup and login app that performs comprehensive front-end and back-end checks on user input...",
       tag: "",
       className: "",
     },
     {
       projectName: "Simple To-Do List",
       technolgies: ["HTML", "CSS", "JS", "PHP", "SQL"],
-      projectUrl: "https://github.com/MasterBuj/todo-list",
+      projectUrl: "https://github.com/MasterBuj/user-registration-oop",
+      demoUrl: "https://github.com/MasterBuj/todo-list",
       status: "Complete",
       category: "Web App",
       responsive: true,
-      images: "slide2.jpg",
-      description: "The \"Simple To-Do List\" project is a web application developed using HTML, CSS, JavaScript, PHP, and SQL. It provides users with a platform to create and manage their to-do tasks with additional features...",
+      images: "Projects-images-0002.jpg",
+      description: "Stay organized with a responsive todo list app that enables you to add files to your tasks, ensuring you never miss a detail...",
       tag: "",
       className: "blur-max",
     },
     {
       projectName: "MovInfo",
       technolgies: ["HTML", "CSS", "JS", "API"],
-      projectUrl: "https://github.com/MasterBuj/MovieInfo",
+      projectUrl: "https://github.com/MasterBuj/user-registration-oop",
+      demoUrl: "https://github.com/MasterBuj/MovieInfo",
       status: "Ongoing",
       category: "Web App",
       responsive: true,
-      images: "slide3.jpg",
-      description: "The \"Movie Information Website\" project is a web application built using HTML, CSS, and JavaScript. Its purpose is to provide users with a platform to explore and access information about movies...",
+      images: "Projects-images-0003.jpg",
+      description: "A responsive movie app that fetches information from an API, allowing users to explore and discover movies with ease...",
+      tag: "",
+      className: "",
+    },
+    {
+      projectName: "Quotes Generator API",
+      technolgies: ["HTML", "CSS", "JS", "API"],
+      projectUrl: "https://github.com/MasterBuj/user-registration-oop",
+      demoUrl: "https://masterbuj.github.io/Quotes-Generator-API/",
+      status: "Complete",
+      category: "Web App",
+      responsive: true,
+      images: "Projects-images-0005.jpg",
+      description: "Get inspired with a quotes generator app that uses an API to generate new quotes. Customize and download quotes as images, along with author information.",
       tag: "",
       className: "",
     }
