@@ -55,7 +55,7 @@ $(window).on('load', function () {
           </div>
           <p>${description}</p>
           <div class="media-icon">
-            <a href="${projectUrl}" class="icon">Demo</a>
+            <a href="${demoUrl}" class="icon">Demo</a>
             <a href="${projectUrl}" class="icon">Github</a>
           </div>
         </div>
@@ -83,7 +83,7 @@ $(window).on('load', function () {
     {
       projectName: "Simple To-Do List",
       technolgies: ["HTML", "CSS", "JS", "PHP", "SQL"],
-      projectUrl: "https://github.com/MasterBuj/user-registration-oop",
+      projectUrl: "https://github.com/MasterBuj/todo-list",
       demoUrl: "https://github.com/MasterBuj/todo-list",
       status: "Complete",
       category: "Web App",
@@ -96,7 +96,7 @@ $(window).on('load', function () {
     {
       projectName: "MovInfo",
       technolgies: ["HTML", "CSS", "JS", "API"],
-      projectUrl: "https://github.com/MasterBuj/user-registration-oop",
+      projectUrl: "https://github.com/MasterBuj/MovieInfo",
       demoUrl: "https://github.com/MasterBuj/MovieInfo",
       status: "Ongoing",
       category: "Web App",
@@ -109,7 +109,7 @@ $(window).on('load', function () {
     {
       projectName: "Quotes Generator API",
       technolgies: ["HTML", "CSS", "JS", "API"],
-      projectUrl: "https://github.com/MasterBuj/user-registration-oop",
+      projectUrl: "https://github.com/MasterBuj/Quotes-Generator-API",
       demoUrl: "https://masterbuj.github.io/Quotes-Generator-API/",
       status: "Complete",
       category: "Web App",
