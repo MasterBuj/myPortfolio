@@ -38,7 +38,7 @@ $(window).on('load', function () {
   //laod all projects
   function loadProjects(projects) {
     projects.forEach(function (project) {
-      const { projectName, technolgies, projectUrl, status, category, responsive, images, description, tag, className } = project;
+      const { projectName, technolgies, projectUrl, status, category, demoUrl, responsive, images, description, tag, className } = project;
       const skills = technolgiesF(technolgies);
       const projectEl = $("<section>").addClass("project-item");
       projectEl.html(`
@@ -97,7 +97,8 @@ $(window).on('load', function () {
       projectName: "MovInfo",
       technolgies: ["HTML", "CSS", "JS", "API"],
       projectUrl: "https://github.com/MasterBuj/MovieInfo",
-      demoUrl: "https://github.com/MasterBuj/MovieInfo",
+      demoUrl: "https://masterbuj.github.io/MovieInfo/",
+
       status: "Ongoing",
       category: "Web App",
       responsive: true,
